@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-import { AccordionModule, TabViewModule } from 'primeng/primeng';
-import { MenuItem } from 'primeng/primeng';
+import { AccordionModule, TabViewModule, MenuItem } from 'primeng/primeng';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +7,5 @@ import { MenuItem } from 'primeng/primeng';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
 }
