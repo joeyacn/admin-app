@@ -77,13 +77,9 @@
 }
 
 /*输入框用户名不能为空*/
-.notice_account{
+.notice_message{
     font-size: 10px;
     color:red;
     position: relative;
     left: 10px;
-}
-
-input.ng-invalid{
-    border:1px solid red;
 }

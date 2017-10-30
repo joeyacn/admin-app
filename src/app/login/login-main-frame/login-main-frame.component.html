@@ -9,7 +9,7 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your application</p>
 
-        <form method="post" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
           <!-- user account -->
           <div class="form-group has-feedback">
             <input 
@@ -18,10 +18,8 @@
             placeholder="Account"
             name="username"
             [(ngModel)]="username"
-            required
-            #userName="ngModel"
             >
-            <div *ngIf="userName.errors?.required" class="notice_account">Please input your account</div>
+            <div *ngIf="ac_show_flag" class="notice_message">Please input your account</div>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
           <!-- user password -->
@@ -33,9 +31,8 @@
             name="userpasswd"
             [(ngModel)]="userpasswd"
             maxlength="6"
-            #userPwd="ngModel"
             >
-            
+            <div *ngIf="pwd_show_flag" class="notice_message">Please input your password</div>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
 

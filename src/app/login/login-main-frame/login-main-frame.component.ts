@@ -15,8 +15,14 @@ export class LoginMainFrameComponent implements OnInit {
   userpasswd : string;
   userchecked : boolean;
 
+  ac_show_flag : boolean;
+  pwd_show_flag : boolean;
 
-  constructor(private loginservice : LoginServiceService, private router : Router) { }
+
+  constructor(private loginservice : LoginServiceService, private router : Router) { 
+    this.ac_show_flag = false;
+    this.pwd_show_flag = false;
+  }
 
   ngOnInit() {
     //拉升login背景的高度
@@ -24,6 +30,19 @@ export class LoginMainFrameComponent implements OnInit {
   }
 
   onSubmit(formValue){
+    console.log(formValue.username);
+    console.log(formValue.userpasswd);
+    //undefined
+    if(formValue.username == undefined){
+      this.ac_show_flag = true;
+      return false;
+    }
+
+    if(formValue.userpasswd == undefined){
+      this.pwd_show_flag = true;
+      return false;
+    }
+
     if(this.loginservice.RequestLogin(formValue.username, formValue.userpasswd)){
       this.router.navigate(['/home']);
     }
