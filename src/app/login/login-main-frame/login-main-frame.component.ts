@@ -26,7 +26,7 @@ export class LoginMainFrameComponent implements OnInit {
 
   ngOnInit() {
     //拉升login背景的高度
-    $('.login-bk').css({'height': $(document).height()});
+    //$('.login-bk').css({'height': $(document).height()});
   }
 
   onSubmit(formValue){

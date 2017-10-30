@@ -1,14 +1,22 @@
 .login-bk{
     position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
     background:#ddd;
+    min-height: 800px;
+}
+
+@media(max-height:600px){
+    .login-form{
+        margin-top: 0;
+    }   
 }
 
 .login-form{
   margin: 200px auto;
+  
   width: 500px;
   height: 400px;
   box-shadow: 0 0 20px #ccc;
@@ -70,7 +78,7 @@
     margin:0;
 }
 
-@media(max-height:500px){
+@media(max-height:670px){
     .cr-footer{
         display: none;
     }
