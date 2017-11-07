@@ -17,18 +17,23 @@
     <!--------------------------
       | Your Page Content Here |
       -------------------------->
-    <p-tabView>
+     <p-tabView>
       <p-tabPanel header="Header 1" [closable]="true">
           Content 1
       </p-tabPanel>
-      <p-tabPanel header="Header 2" [closable]="true">
+      <!-- <p-tabPanel header="Header 2" [closable]="true">
           Content 2
       </p-tabPanel>
       <p-tabPanel header="Header 3" [closable]="true">
-          Content 3    
-      </p-tabPanel>
+          Content 3
+      </p-tabPanel> -->
+      <a *ngFor="let showtab of tabs">
+        <p-tabPanel header="{{showtab.header}}" [closable]='showtab.closable'>
+          {{showtab.content}}
+          {{showtab.closable}}
+        </p-tabPanel>
+      </a>
     </p-tabView>
-
   </section>
   <!-- /.content -->
 </div>

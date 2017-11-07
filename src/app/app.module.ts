@@ -18,7 +18,8 @@ import { LoginMainFrameComponent } from './login/login-main-frame/login-main-fra
 import { AppComponent } from './app.component';
 
 //Service & Routes & HTTP
-import { LoginServiceService } from './services/login-service.service'
+import { LoginServiceService } from './services/login-service.service';
+import { TabService } from './services/tab.service';
 import { routing } from './routes/app.routes';
 import { HttpModule } from '@angular/http';
 
@@ -42,7 +43,10 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     FormsModule
   ],
-  providers: [LoginServiceService],
+  providers: [
+    LoginServiceService,
+    TabService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
