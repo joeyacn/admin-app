@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 //导入Login Service
 import { LoginServiceService } from '../../services/login-service.service';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 declare var $:any;
 
 @Component({
@@ -11,40 +11,37 @@ declare var $:any;
   styleUrls: ['./login-main-frame.component.css']
 })
 export class LoginMainFrameComponent implements OnInit {
-  username : string;
-  userpasswd : string;
-  userchecked : boolean;
 
-  ac_show_flag : boolean;
-  pwd_show_flag : boolean;
-
+  private formModel : FormGroup;
+  private fb: FormBuilder = new FormBuilder();
+  private userID : string;
+  private userPwd : string;
 
   constructor(private loginservice : LoginServiceService, private router : Router) { 
-    this.ac_show_flag = false;
-    this.pwd_show_flag = false;
+    this.formModel = this.fb.group({
+      loginName : ['', Validators.required],
+
+      loginPasswd : ['', [Validators.required]],
+
+      remFlag : ['']
+    });
   }
 
-  ngOnInit() {
-    //拉升login背景的高度
-    //$('.login-bk').css({'height': $(document).height()});
-  }
+  ngOnInit() {}
 
-  onSubmit(formValue){
-    console.log(formValue.username);
-    console.log(formValue.userpasswd);
-    //undefined
-    if(formValue.username == undefined){
-      this.ac_show_flag = true;
-      return false;
-    }
+  doSubmit(){
+    if(this.formModel.valid){
+      this.userID = this.formModel.get('loginName').value;
+      this.userPwd = this.formModel.get('loginPasswd').value;
 
-    if(formValue.userpasswd == undefined){
-      this.pwd_show_flag = true;
-      return false;
-    }
-
-    if(this.loginservice.RequestLogin(formValue.username, formValue.userpasswd)){
-      this.router.navigate(['/home']);
+      if(this.loginservice.requestLogin(this.userID, this.userPwd)){
+        this.router.navigate(['/home']);
+      }else{
+        alert('登录失败');
+      }
+      // if(this.loginservice.requestLogin(this.userID, this.userPwd)){
+      //   this.router.navigate(['/home']);
+      // }
     }
   }
 

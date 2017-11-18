@@ -1,28 +1,45 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http, Headers } from "@angular/http";
 import 'rxjs/add/operator/map';
+import { transition } from '@angular/core/src/animation/dsl';
 
 @Injectable()
 export class LoginServiceService {
-  login_date : Date;
-  username : string;
+  sysDate : Date;
+  userID : string;
 
   constructor(private http : Http) { }
 
   //获取系统时间
   getSysDate() : Date{
-    this.login_date = new Date();
-    return  this.login_date;
+    this.sysDate = new Date();
+    return  this.sysDate;
   }
 
   getUsername() : string{
-    return this.username;
+    return this.userID;
   }
 
-  //Http请求，验证用户名和密码
-  RequestLogin(name, password) : boolean{
-    //console.log(name + "" + password);
-    this.username = name;
+  requestLogin(id, pwd) : boolean{
+    let myHeaders : Headers = new Headers();
+    let userID : string;
+    let userPwd : string;
+    myHeaders.append('username', id);
+    myHeaders.append('userpasswd', pwd);
+    
+    userID = "";
+    userPwd = "";
+    //远程服务
+    // this.http.get('/',{headers:myHeaders})
+    // .map(response => response.json())
+    // .subscribe(data =>{
+    //   if(data.key == "200"){
+    //     return true;
+    //   }
+    // });
+
+    //本地JSON
     return true;
   }
 }

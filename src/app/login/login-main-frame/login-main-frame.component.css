@@ -5,7 +5,7 @@
     right: 0px;
     bottom: 0px;
     background:#ddd;
-    min-height: 800px;
+    min-height: 700px;
 }
 
 @media(max-height:600px){
@@ -15,19 +15,19 @@
 }
 
 .login-form{
-  margin: 200px auto;
+  margin: 0px auto;
   
-  width: 500px;
-  height: 400px;
-  box-shadow: 0 0 20px #ccc;
-  border-radius: 7px;
+  width: 365PX;
+  height: 191px;
+  box-shadow: 0 0 25px #ccc;
+  border-radius: 8px;
   background: #f2f2f5;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .login-box{
-    margin-top: 65px;
+    margin-top: 16px;
     overflow: hidden;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .login-logo{
-    margin:13px 25px auto;
+    margin:140px 25px auto;
     position: relative;
 }
 
@@ -54,8 +54,8 @@
 }
 
 .btn_design{
-    background-color: #444;
-    color: #ddd;
+    background-color: #3c8dbc;
+    color: white;
     border: 0px;
     border-radius: 4px;
 }
@@ -85,9 +85,9 @@
 }
 
 /*输入框用户名不能为空*/
-.notice_message{
+.noticeMsg{
     font-size: 10px;
     color:red;
-    position: relative;
-    left: 10px;
+    position: absolute;
+    
 }
