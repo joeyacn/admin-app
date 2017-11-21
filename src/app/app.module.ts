@@ -29,7 +29,11 @@ import { RoleService } from './services/role.service';
 import { routing } from './routes/app.routes';
 import { HttpModule } from '@angular/http';
 
+// User Info
+import { UserInfoComponent } from './home/content/userInfo/userInfo.component';
 
+// User Admin
+import { UserAdminComponent } from './home/content/userAdmin/userAdmin.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import { HttpModule } from '@angular/http';
     LoginMainFrameComponent,
     HomeComponent,
     RoleComponent,
+    UserInfoComponent,
+    UserAdminComponent,
   ],
   imports: [
     BrowserModule,
