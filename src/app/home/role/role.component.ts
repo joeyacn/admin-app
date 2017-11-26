@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Role } from './role';
+import { Role } from '../services/role';
 import { SelectItem } from 'primeng/primeng';
-import { RoleService } from './../../../services/role.service';
+import { RoleService } from '../services/role.service';
 
 @Component({
   templateUrl: './role.component.html',
   styleUrls: ['./role.component.css'],
   providers: [RoleService]
 })
-
 export class RoleComponent implements OnInit {
   // if add/modify dialog show
   displayDialog: boolean;

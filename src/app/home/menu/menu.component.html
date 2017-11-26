@@ -33,14 +33,14 @@
       <li class="active"><a routerLink="userInfo"><i class="fa fa-link"></i> <span>User Info</span></a></li>
       <li><a routerLink="userAdmin"><i class="fa fa-link"></i> <span>User Admin</span></a></li>
       <li class="treeview">
-        <a routerLink="roleAdmin"><i class="fa fa-link"></i> <span>Role Admin</span>
+        <a routerLink="role"><i class="fa fa-link"></i> <span>Role Admin</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
 
         <ul class="treeview-menu">
-          <li><a routerLink='roleAdmin/level1'>Link in level 1</a></li>
+          <li><a routerLink='role/level1'>Link in level 1</a></li>
           <li><a href="#">Link in level 2</a></li>
           <li><a (click)="tabService.addTabView('tab3', 'tab3 content', true)">Link in level 3</a></li>
           <li><a (click)="tabService.addTabView('tab4', 'tab4 content', false)">Link in level 4</a></li>

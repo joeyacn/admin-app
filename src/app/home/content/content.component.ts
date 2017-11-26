@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { TabClass } from './tab/tab-class';
-import { TabService } from '../../services/tab.service';
-declare var $:any;
+import { TabClass } from '../services/tab-class';
+import { TabService } from '../services/tab.service';
+declare var $: any;
 
 @Component({
   selector: 'app-content',
@@ -9,7 +9,7 @@ declare var $:any;
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
-  content_height : number;
+  content_height: number;
   tabs: TabClass[];
 
   constructor(

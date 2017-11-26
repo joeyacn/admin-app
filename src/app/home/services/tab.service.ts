@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TabClass } from '../home/content/tab/tab-class';
-import { TABS } from '../home/content/tab/mock-tabs';
+import { TabClass } from '../services/tab-class';
+import { TABS } from '../services/mock-tabs';
 
 @Injectable()
 export class TabService {

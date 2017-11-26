@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginServiceService } from '../../services/login-service.service';
-import { TabService } from '../../services/tab.service';
+import { LoginService } from '../../services/login-service.service';
+import { TabService } from '../services/tab.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,16 +8,16 @@ import { TabService } from '../../services/tab.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  username : string = "";
+  username: string = '';
 
   constructor(
-    private loginservice: LoginServiceService,
+    private loginservice: LoginService,
     public tabService: TabService
   ) { }
 
   ngOnInit() {
-    //获取当前登陆的用户名
-    //this.tabService.TABS3 = [];
+    // 获取当前登陆的用户名
+    // this.tabService.TABS3 = [];
     this.username = this.loginservice.getUsername();
   }
 }

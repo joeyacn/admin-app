@@ -1,42 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//导入Login Service
-import { LoginServiceService } from '../../services/login-service.service';
+// 导入Login Service
+import { LoginService } from '../../services/login-service.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-declare var $:any;
+declare var $: any;
 
 @Component({
-  selector: 'main-login-frame',
+  selector: 'app-main-login-frame',
   templateUrl: './login-main-frame.component.html',
   styleUrls: ['./login-main-frame.component.css']
 })
 export class LoginMainFrameComponent implements OnInit {
 
-  private formModel : FormGroup;
+  private formModel: FormGroup;
   private fb: FormBuilder = new FormBuilder();
-  private userID : string;
-  private userPwd : string;
+  private userID: string;
+  private userPwd: string;
 
-  constructor(private loginservice : LoginServiceService, private router : Router) { 
+  constructor(private loginservice: LoginService, private router: Router) {
     this.formModel = this.fb.group({
-      loginName : ['', Validators.required],
+      loginName: ['', Validators.required],
 
-      loginPasswd : ['', [Validators.required]],
+      loginPasswd: ['', [Validators.required]],
 
-      remFlag : ['']
+      remFlag: ['']
     });
   }
 
   ngOnInit() {}
 
-  doSubmit(){
-    if(this.formModel.valid){
+  doSubmit() {
+    if (this.formModel.valid) {
       this.userID = this.formModel.get('loginName').value;
       this.userPwd = this.formModel.get('loginPasswd').value;
 
-      if(this.loginservice.requestLogin(this.userID, this.userPwd)){
+      if (this.loginservice.requestLogin(this.userID, this.userPwd)) {
         this.router.navigate(['/home']);
-      }else{
+      }else {
         alert('登录失败');
       }
       // if(this.loginservice.requestLogin(this.userID, this.userPwd)){

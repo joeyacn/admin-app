@@ -1,73 +1,30 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionModule, TabViewModule, MenuItem, DataTableModule, SharedModule,
-   DialogModule, MultiSelectModule, DropdownModule } from 'primeng/primeng';
-
-// HOME操作界面
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './home/header/header.component';
-import { MenuComponent } from './home/menu/menu.component';
-import { SidebarComponent } from './home/sidebar/sidebar.component';
-import { FooterComponent } from './home/footer/footer.component';
-import { ContentComponent } from './home/content/content.component';
-
-// 登录界面
-import { LoginMainFrameComponent } from './login/login-main-frame/login-main-frame.component';
-
+import { HttpModule } from '@angular/http';
 // app-root
 import { AppComponent } from './app.component';
+// 登录界面
+import { LoginModule } from './login/login.module';
+// 主页面
+import { HomeModule } from './home/home.module';
+// 主路由
+import { AppRoutingModule } from './app-routing.module';
 
-// Role
-import { RoleComponent } from './home/content/role/role.component';
-
-// Service & Routes & HTTP
-import { LoginServiceService } from './services/login-service.service';
-import { TabService } from './services/tab.service';
-import { RoleService } from './services/role.service';
-import { routing } from './routes/app.routes';
-import { HttpModule } from '@angular/http';
-
-// User Info
-import { UserInfoComponent } from './home/content/userInfo/userInfo.component';
-
-// User Admin
-import { UserAdminComponent } from './home/content/userAdmin/userAdmin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    MenuComponent,
-    SidebarComponent,
-    FooterComponent,
-    ContentComponent,
-    LoginMainFrameComponent,
-    HomeComponent,
-    RoleComponent,
-    UserInfoComponent,
-    UserAdminComponent,
   ],
   imports: [
     BrowserModule,
-    TabViewModule,
-    routing,
     HttpModule,
-    FormsModule,
-    ReactiveFormsModule,
-    DataTableModule,
-    SharedModule,
-    DialogModule,
     BrowserAnimationsModule,
-    MultiSelectModule,
-    DropdownModule
+    LoginModule,
+    HomeModule,
+    AppRoutingModule,
   ],
-  providers: [
-    LoginServiceService,
-    TabService,
-    RoleService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

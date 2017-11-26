@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { SelectItem } from 'primeng/primeng';
-import { Role } from '../home/content/role/role';
-
-import { ROLE, CODE } from '../home/content/role/mock-role';
+import { Role } from './role';
+import { ROLE, CODE } from './mock-role';
 
 import 'rxjs/add/observable/of';
 

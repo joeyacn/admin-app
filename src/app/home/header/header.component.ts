@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginServiceService } from '../../services/login-service.service';
+import { LoginService } from '../../services/login-service.service';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +8,17 @@ import { LoginServiceService } from '../../services/login-service.service';
 })
 export class HeaderComponent implements OnInit {
 
-  username : string = "";
-  login_date : string;
-  
-  constructor(private loginservice : LoginServiceService) { }
-  
-  ngOnInit() {
-    //通过服务获取系统的Date(Nov. 2012)
-    this.login_date = this.loginservice.getSysDate().getMonth() + " " + this.loginservice.getSysDate().getFullYear();
+  username: string = '';
+  login_date: string;
 
-    //获取当前登陆的用户名
+  constructor(private loginservice: LoginService) { }
+
+  ngOnInit() {
+    // 通过服务获取系统的Date(Nov. 2012)
+    this.login_date = this.loginservice.getSysDate().getMonth() + ' ' + this.loginservice.getSysDate().getFullYear();
+
+    // 获取当前登陆的用户名
     this.username = this.loginservice.getUsername();
   }
-  
+
 }
