@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AccordionModule, TabViewModule, MenuItem } from 'primeng/primeng';
+import { AccordionModule, TabViewModule, PanelMenuModule, MenuItem } from 'primeng/primeng';
 
 @Component({
   selector: 'app-root',

@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionModule, TabViewModule, MenuItem, DataTableModule, SharedModule,
-   DialogModule, MultiSelectModule, DropdownModule } from 'primeng/primeng';
+import { AccordionModule, TabViewModule, PanelMenuModule,
+         MenuItem, DataTableModule, SharedModule,
+         DialogModule, MultiSelectModule, DropdownModule } from 'primeng/primeng';
 
 // HOME操作界面
 import { HomeComponent } from './home/home.component';
@@ -59,6 +60,7 @@ import { UserAdminComponent } from './home/content/userAdmin/userAdmin.component
     DataTableModule,
     SharedModule,
     DialogModule,
+    PanelMenuModule,
     BrowserAnimationsModule,
     MultiSelectModule,
     DropdownModule
