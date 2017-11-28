@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { TabPanel} from 'primeng/primeng';
 import { TabClass } from '../services/tab-class';
 import { TabService } from '../services/tab.service';
 declare var $: any;
@@ -18,10 +19,10 @@ export class ContentComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getHeroes();
+    this.getTabs();
   }
 
-  getHeroes(): void {
+  getTabs(): void {
     this.tabs = this.tabService.getTabs();
   }
 
@@ -31,5 +32,16 @@ export class ContentComponent implements OnInit {
     //拉升content的高度，解决login界面到home界面出现的min-height bug
     //872px
     $('.content-wrapper').css({'height': this.content_height});
+  }
+
+  onTabChange(event) {
+      console.log(event);
+  }
+
+  handleClose(event) {
+    let index = event.index;
+    this.tabService.DeleteTabView(index);
+    console.log(this.tabs);
+      //   this.tabViewResponseService.closeTabNav(this.uiTabView.el.nativeElement);
   }
 }

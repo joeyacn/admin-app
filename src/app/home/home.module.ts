@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AccordionModule, TabViewModule } from 'primeng/primeng';
+import { PanelMenuModule } from 'primeng/primeng';
 import { MenuItem } from 'primeng/primeng';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -38,6 +39,7 @@ import { TabService } from './services/tab.service';
     CommonModule, FormsModule,
     DataTableModule, SharedModule, DialogModule, MultiSelectModule, DropdownModule,
     TabViewModule,
+    PanelMenuModule,
     HomeRoutingModule,
   ],
   providers: [

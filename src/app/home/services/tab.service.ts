@@ -11,4 +11,8 @@ export class TabService {
   addTabView(header: string, content: string, closable: boolean): void {
     TABS.push({id: 0, header: header, content: content, closable: closable});
   }
+
+  DeleteTabView(ind: number): void {
+    TABS.splice(ind, 1);
+  }
 }
