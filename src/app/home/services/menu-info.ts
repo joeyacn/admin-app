@@ -7,8 +7,8 @@ export let menuInfo = [
         label: 'New',
         icon: 'fa-plus',
         items: [
-          {label: 'Project', routerLink: 'role'},
-          {label: 'Other'},
+          {label: 'Role', routerLink: 'role'},
+          {label: 'userAdmin', routerLink: 'userAdmin'}
         ]
       },
       {label: 'Open'},

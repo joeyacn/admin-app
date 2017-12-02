@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { TabPanel} from 'primeng/primeng';
 import { TabClass } from '../services/tab-class';
 import { TabService } from '../services/tab.service';
@@ -10,6 +10,10 @@ declare var $: any;
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  @Input() activeTabIndex: number;
+  @Output() tabChangeHandler: EventEmitter<any> = new EventEmitter<any>();
+  @Output() tabCloseHandler: EventEmitter<any> = new EventEmitter<any>();
+  
   content_height: number;
   tabs: TabClass[];
 
@@ -24,6 +28,8 @@ export class ContentComponent implements OnInit {
 
   getTabs(): void {
     this.tabs = this.tabService.getTabs();
+    console.log(this.tabs);
+    console.log(this.activeTabIndex);
   }
 
   ngAfterViewInit() {
@@ -35,13 +41,11 @@ export class ContentComponent implements OnInit {
   }
 
   onTabChange(event) {
-      console.log(event);
+    this.tabChangeHandler.emit(event);
   }
 
   handleClose(event) {
-    let index = event.index;
-    this.tabService.DeleteTabView(index);
-    console.log(this.tabs);
-      //   this.tabViewResponseService.closeTabNav(this.uiTabView.el.nativeElement);
+    this.tabService.DeleteTabView(event.index);
+    this.tabCloseHandler.emit(event);
   }
 }

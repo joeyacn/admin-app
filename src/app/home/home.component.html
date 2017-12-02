@@ -3,10 +3,14 @@
     <!-- Main Header -->
     <app-header></app-header>
     <!-- Left side column. contains the logo and sidebar -->
-    <app-menu></app-menu>
+    <app-menu (menuClickHandler)="menuClickHandler($event)"></app-menu>
   
     <!-- Content Wrapper. Contains page content -->
-    <app-content></app-content>
+    <app-content
+        [activeTabIndex] ="activeTabIndex"
+        (tabChangeHandler)="tabChangeHandler($event)"
+        (tabCloseHandler)="tabCloseHandler($event)"
+        ></app-content>
     <!-- /.content-wrapper -->
   
     <!-- Main Footer -->

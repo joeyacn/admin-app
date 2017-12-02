@@ -17,16 +17,16 @@
     <!--------------------------
       | Your Page Content Here |
       -------------------------->
-    <p-tabView (onChange)="onTabChange($event)" (onClose)="handleClose($event)">
-      <p-tabPanel header="Header 1" [closable]="true">
+    <button (click)="getTabs()">Agree</button>
+    <p-tabView [activeIndex]="activeTabIndex" (onChange)="onTabChange($event)" (onClose)="handleClose($event)">
+      <!-- <p-tabPanel header="Header 1" [closable]="true">
           <router-outlet></router-outlet>
+      </p-tabPanel> -->
+      <p-tabPanel *ngFor="let tab of tabs;let i=index;" header="{{tab.header}}" [closable]='tab.closable'>
+        <!-- <ui-tab-panel [tabItem]="tab"></ui-tab-panel> -->
+        <router-outlet></router-outlet>
+        {{tab.content}}
       </p-tabPanel>
-      <a *ngFor="let showtab of tabs">
-        <p-tabPanel header="{{showtab.header}}" [closable]='showtab.closable'>
-          {{showtab.content}}
-          {{showtab.closable}}
-        </p-tabPanel>
-      </a>
     </p-tabView>
   </section>
   <!-- /.content -->
